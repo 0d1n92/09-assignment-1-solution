@@ -1,6 +1,6 @@
-   import '../css/ExpenseData.css';
+   import '../css/ExpenseDate.css';
 
-   export default function ExpensesData (props) {
+   export default function ExpensesDate (props) {
      return (
         <div className="expense-date">
           <div className="expense-date__month">{props.date.toLocaleString('it-IT', { month: 'long' })}</div>
