@@ -1,5 +1,5 @@
 import './index.css';
-import ExpenseItem from './components/ExpenseItem/ExpenseItem';
+import Expense from './components/ExpenseItem/Expense';
 function App() {
   const expenses = [
     {
@@ -23,20 +23,11 @@ function App() {
     },
   ];
 
-    const render = [];
-    expenses.forEach((data) => {
-      render.push(
-        <ExpenseItem
-        title={data.title}
-        amount={data.amount}
-        date={data.date}
-      ></ExpenseItem>
-      )
-      })
+  
 
   return (
     <>
-      {render}
+      <Expense data={expenses}/>
     </>
   )
   

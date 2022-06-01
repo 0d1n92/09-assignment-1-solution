@@ -1,6 +1,6 @@
-   import '../css/ExpenseInfo.css';
+   import '../css/ExpenseItem.css';
 
-   export default function ExpensesInfo (props) {
+   export default function ExpensesItem (props) {
      return (
         <div className='expense-item__description'>
         <h2>{props.title}</h2>
