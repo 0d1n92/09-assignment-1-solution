@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../css/NewExpenseForm.css';
-const NewExpreseForm = () => {
+const NewExpreseForm = (props) => {
+
   const [title, setTitle]= useState('');
   const [amount, setAmount]= useState('');
   const [date, setDate]= useState(''); 
@@ -70,7 +71,7 @@ const NewExpreseForm = () => {
       amount: amount,
       date: new Date(date),
     };
-
+    props.ProssToPassDataFromChild(expenseData);
     console.log(expenseData);
     setTitle('');
     setAmount('');
