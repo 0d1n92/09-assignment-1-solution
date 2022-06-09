@@ -1,7 +1,7 @@
 import './css/Expense.css';
 import ExpenseDate from './items/ExpenseDate';
 import ExpenseItem from './items/ExpenseItem';
-
+import React from 'react';
 function Expense(props) {
     const render = [];
     props.data.forEach((data, i) => {
