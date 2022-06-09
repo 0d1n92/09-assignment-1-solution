@@ -13,7 +13,7 @@ const NewExpese = (props) => {
 
   return (
     <div className='new-expense'>
-      <NewExpreseForm ProssToPassDataFromChild={PassChildData} />
+      <NewExpreseForm ProssToPassDataFromChild={PassChildData} ></NewExpreseForm>
     </div>
   );
 };
