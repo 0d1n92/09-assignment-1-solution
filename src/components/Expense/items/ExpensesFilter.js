@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import React, { useState } from 'react';
 import '../css/ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
@@ -14,7 +14,7 @@ const ExpensesFilter = (props) => {
   }
 
   return (
-    <div className='expenses-filter'>
+   <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
         <select value={props.selected} onChange={HandlerYears}>
@@ -25,7 +25,7 @@ const ExpensesFilter = (props) => {
         </select>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default ExpensesFilter;
