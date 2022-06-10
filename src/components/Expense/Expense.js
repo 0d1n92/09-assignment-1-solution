@@ -5,7 +5,7 @@ import ExpenseItem from './items/ExpenseItem';
 import ExpensesFilter from './items/ExpensesFilter';
 
 function Expense(props) {
-    const [filteredYear, setFilteredYear] = useState('2020');
+    const [filteredYear, setFilteredYear] = useState('');
     const [allDates, setAllDates] = useState(props.data);
     const item = props.data;
     const FilterByYears = (data) => {
@@ -14,20 +14,23 @@ function Expense(props) {
 
    const onChangeDate = (year) => {
       setAllDates(props.data);
+      if (year !== ""){
       const results = item.filter((element)=> element.date.getFullYear().toString() === year);
-      setAllDates(results);
+        setAllDates(results);
+      }
    };
+
+   const renderNotZero = 
+      allDates.map((data, i) => (
+        <div className='expense-item' key={i}>
+          <ExpenseDate date={data.date}></ExpenseDate>
+          <ExpenseItem title={data.title} amount={data.amount}></ExpenseItem>;
+        </div>));
 
   return (
     <>
-      <ExpensesFilter  selected={filteredYear} onChangeDate={onChangeDate} ChangeYearFather={FilterByYears} />
-      {allDates.map((data, i) => (
-        <div className='expense-item' key={i}>
-          <ExpenseDate date={data.date}></ExpenseDate>
-          <ExpenseItem title={data.title} amount={data.amount}></ExpenseItem>
-        </div>
-
-      ))}
+    <ExpensesFilter  selected={filteredYear} onChangeDate={onChangeDate} ChangeYearFather={FilterByYears} />
+     {allDates.length > 0 ? renderNotZero : "no items to display"} 
     </>
   );
 }
