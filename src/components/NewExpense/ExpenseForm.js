@@ -91,7 +91,7 @@ const ExpenseForm = (props) => {
     <form onSubmit={submitHandler}>
     {showForm ? form : "" }
       <div className='new-expense__actions'>
-      <button onClick={(e)=>{e.preventDefault(); setShowForm(false)}}>cancel</button>
+    {showForm ? <button onClick={(e)=>{e.preventDefault(); setShowForm(false)}}>cancel</button>: ""}
         <button type='submit'>Add Expense</button>
         
       </div>
