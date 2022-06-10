@@ -20,16 +20,17 @@ function Expense(props) {
       }
    };
 
-  return (
-    <>
-      <ExpensesFilter  selected={filteredYear} onChangeDate={onChangeDate} ChangeYearFather={FilterByYears} />
-      {allDates.map((data, i) => (
+   const renderNotZero = 
+      allDates.map((data, i) => (
         <div className='expense-item' key={i}>
           <ExpenseDate date={data.date}></ExpenseDate>
-          <ExpenseItem title={data.title} amount={data.amount}></ExpenseItem>
-        </div>
+          <ExpenseItem title={data.title} amount={data.amount}></ExpenseItem>;
+        </div>));
 
-      ))}
+  return (
+    <>
+    <ExpensesFilter  selected={filteredYear} onChangeDate={onChangeDate} ChangeYearFather={FilterByYears} />
+     {allDates.length > 0 ? renderNotZero : "no items to display"} 
     </>
   );
 }
