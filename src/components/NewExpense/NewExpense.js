@@ -1,21 +1,22 @@
 import React from 'react';
-import './css/NewExpense.css';
-import NewExpreseForm from './items/NewExpensesForm';
 
-const NewExpese = (props) => {
-  const PassChildData = (childData) => {
-      const FatherDataFromChild = {
-        ...childData,
-        id:Math.random().toString()
-      }
-      alert("dati dal padre" + FatherDataFromChild.amount);
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css';
+
+const NewExpense = (props) => {
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString()
+    };
+    props.onAddExpense(expenseData);
   };
 
   return (
     <div className='new-expense'>
-      <NewExpreseForm ProssToPassDataFromChild={PassChildData} ></NewExpreseForm>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };
 
-export default NewExpese;
+export default NewExpense;

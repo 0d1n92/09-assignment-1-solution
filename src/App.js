@@ -1,7 +1,8 @@
-import './index.css';
-import Expense from './components/Expense/Expense';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+
 import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
+
 const DUMMY_EXPENSES = [
   {
     id: 'e1',
@@ -33,10 +34,17 @@ const App = () => {
     });
   };
 
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expense data={expenses} />
+      <Expenses items={expenses} />
     </div>
   );
 };
